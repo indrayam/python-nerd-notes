@@ -1,3 +1,0 @@
-# Python Skills
-
-Coming soon...
