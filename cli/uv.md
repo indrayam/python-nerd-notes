@@ -1,5 +1,41 @@
 # uv
 
+## uv install
+
+- Install
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+- Update
+
+```bash
+uv self update
+uv tool upgrade --all
+```
+
+- Tools
+
+```bash
+{
+uv tool install pycowsay
+uv tool install huggingface-hub
+uv tool install modal
+uv tool install llm
+uv tool install strip-tags
+uv tool install symbex
+uv tool install ttok
+uv tool install yt-dlp
+uv tool install datasette
+uv tool install git+https://github.com/OpenInterpreter/open-interpreter.git@development
+}
+```
+
+- Tools reinstall
+```bash
+uv tool install pycowsay --reinstall
+```
+
 ## Useful commands
 
 ```bash
@@ -14,26 +50,25 @@ uvx pycowsay Moo
 ## install python tools
 uv tool install --help
 uv tool dir
-uv tool install pycowsay
 cd $HOME/.local/share/uv/tools
-uv tool install pycowsay
-uv tool install llm
 cd .local/bin
-cd
-which pycowsay
-which llm
 
-## install and invoke python 
+## list, install, uninstall
+uv python list
 uv python dir
-uv python find 3.13
+uv python install 3.13
 uv python install 3.14 --preview
 uv python install --reinstall 3.13
-# invoke any python version
+uv python install --reinstall 3.14
+uv python uninstall 3.13
+uv python uninstall 3.14.0a3
+
+## invoke any python version
+uv run --python 3.14 python
 uv run --python 3.13 --with torch python
-# invoke python with torch and numpy
 uv run -p 3.12 --with torch --with numpy -- python
 
-# Start a script for 3.13
+## play with standalone scripts
 uv init --script hello.py --python 3.13
 uv add --script hello.py 'torch' 'numpy'
 # OR
@@ -43,4 +78,14 @@ uv add --script hello.py --python 3.13 'torch' 'numpy'
 touch hello.py
 # create a requirements.txt file with 2 lines one for numpy and one for torch
 uv add --script hello.py --python 3.13 --requirements requirements.txt
+
+# uv ipython kernel setup
+uv run ipython kernel install --user --env VIRTUAL_ENV $(pwd)/.venv --name=jupyter-apps-w-kernel
+
+# Using uv pip to install packages without changing pyproject.toml
+uv pip install tqdm
+
+# Create a requirements.txt file based on pyproject.toml
+uv pip compile pyproject.toml -o requirements.txt
+
 ```
