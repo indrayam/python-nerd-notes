@@ -25,4 +25,13 @@ jupyter --config-dir
 
 # Set JUPYTER_DATA_DIR to change the default configuration directory
 jupyter --data-dir
+
+# To get Matplotlib graphs to show up in the notebook
+uv add sympy ipympl sympy_plot_backends
+# To add interactivity, run this at the top of the notebook
+# When I ran the command below, I got Javascript errors
+# I just was not able to make ipympl work with the fancy 
+# interactive plots that I wanted to use
+%matplotlib widget
+
 ```
