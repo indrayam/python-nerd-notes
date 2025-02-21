@@ -28,8 +28,14 @@ uv tool install ttok
 uv tool install yt-dlp
 uv tool install datasette
 uv tool install git+https://github.com/OpenInterpreter/open-interpreter.git@development
+uv tool install shot-scraper
+uv tool install files-to-prompt
+uv tool install jc
+uv tool install sqlite-utils
+uv tool install playwright
 }
 ```
+
 
 - Tools reinstall
 ```bash
