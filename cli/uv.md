@@ -34,6 +34,24 @@ uv tool install jc
 uv tool install sqlite-utils
 uv tool install playwright
 }
+
+{
+uv tool install pycowsay --reinstall
+uv tool install huggingface-hub --reinstall
+uv tool install modal --reinstall
+uv tool install llm --reinstall
+uv tool install strip-tags --reinstall
+uv tool install symbex --reinstall
+uv tool install ttok --reinstall
+uv tool install yt-dlp --reinstall
+uv tool install datasette --reinstall
+uv tool install git+https://github.com/OpenInterpreter/open-interpreter.git@development --reinstall
+uv tool install shot-scraper --reinstall
+uv tool install files-to-prompt --reinstall
+uv tool install jc --reinstall
+uv tool install sqlite-utils --reinstall
+uv tool install playwright --reinstall
+}
 ```
 
 
